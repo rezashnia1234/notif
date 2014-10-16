@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"   >
+<head>
+	<meta name="format-detection" content="telephone-no">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="stylesheet" href="css/reset.css" type="text/css" /> 
+	<link rel="stylesheet" href="css/toggle.css" type="text/css" /> 
+	<link rel="stylesheet" href="css/setting.css" type="text/css" /> 
+	
+	<title></title>
+	
+	<script src="js/jquery-1.8.2.min.js" type="text/javascript"></script>
+	<script src="phonegap.js" type="text/javascript"></script>
+	<script src="js/fastclick.js" type="text/javascript"></script>
+	<script src="js/scale.js" type="text/javascript"></script>
+
+	<script>
+		function init() {			
+			console.log('SMGROUP ::::::::::::::::::::::::::::::::::::    start init()');
+			document.addEventListener("deviceready", onDeviceReady, false);
+			//document.addEventListener("DOMContentLoaded", loaded, false);
+			
+
+			//onDeviceReady();
+		}
+		function onDeviceReady() {
+			FastClick.attach(document.body);	
+			console.log('SMGROUP ::::::::::::::::::::::::::::::::::::    start onDeviceReady');
+			//scalePage(768,"#exit-btn",true);
+			//scalePage_center(768,"#main",true);
+			
+			if ( device.platform == 'iOS' ){//Android,iOS,win7=WinCE,win8=Win32NT
+				$('#exit-btn').css({'display':'none'});
+			}
+
+		}
+		function exit() {
+			console.log('SMGROUP ::::::::::::::::::::::::::::::::::::    Exit the app! command');
+			navigator.app.exitApp();
+		}
+	</script>
+
+
+<style>
+
+
+
+
+
+</style>
+</head>
+<body onload="init()">
+	<div id="temp"></div>
+	<div id="exit-btn" onclick="exit();"></div>
+	<div id="header">
+		<div id="header-inner" class="header-text"></div>
+		<a href="index.html"><div id="info"></div></a>
+	</div>
+	<div id="footer">
+		<a href="info.html"><div id="info-footer"></div></a>
+	</div>
+	<div id="main">
+		<div style="line-height:200%;">لطفا موضوعاتی که تمایل دارید آخرین اخبار آن ها برای شما ارسال شود را انتخاب نمایید :</div>
+		<br/><br/>
+		<form action="" method="post">
+			<label>
+				<input type="checkbox" name="drsalam" id="toggle" checked="checked">
+				اطلاعیه های دکتر سلام
+				<label for="drsalam" class="toggle"></label> 
+			</label> 
+			<label>
+				<input type="checkbox" name="daneshgah" id="toggle" checked="checked">
+				اخبار دانشگاه ها
+				<label for="daneshgah" class="toggle"></label> 
+			</label> 
+			<label>
+				<input type="checkbox" name="siyasi" id="toggle" checked="checked">
+				اخبار سیاسی
+				<label for="siyasi" class="toggle"></label> 
+			</label> 
+			<label>
+				<input type="checkbox" name="ejtemaei" id="toggle" checked="checked">
+				اخبار اجتماعی
+				<label for="ejtemaei" class="toggle"></label> 
+			</label> 
+			<label>
+				<input type="checkbox" name="havades" id="toggle" checked="checked">
+				اخبار حوادث
+				<label for="havades" class="toggle"></label> 
+			</label> 
+			<label>
+				<input type="checkbox" name="beynolmelal" id="toggle" checked="checked">
+				اخبار بین الملل
+				<label for="beynolmelal" class="toggle"></label> 
+			</label> 
+			<label>
+				<input type="checkbox" name="eghtesadi" id="toggle" checked="checked">
+				اخبار اقتصادی
+				<label for="eghtesadi" class="toggle"></label> 
+			</label> 
+			<label>
+				<input type="checkbox" name="varzeshi" id="toggle" checked="checked">
+				اخبار ورزشی
+				<label for="varzeshi" class="toggle"></label> 
+			</label>
+			<div style="text-align:center;">
+				<input type="submit" id="submit">
+			</div>
+		</form>
+		<br/><br/><br/><br/><br/>
+
+
+
+
+
+
+
+
+
+
+	</div>
+</body>
+</html>
